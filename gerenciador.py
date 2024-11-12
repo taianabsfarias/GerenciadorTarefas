@@ -3,7 +3,7 @@
 def AddTasks(tasks, taskName="No name"):
 
     task = {"name": taskName, "Done": False}
-    tasks.append()
+    tasks.append(task)
     print(f"The task {taskName} was added successfully.")
 
     return
@@ -31,6 +31,22 @@ def UpdateName(tasks, index, newName):
     
     return
 
+def FinishTasks(tasks, index):
+    
+    correctIndex = index - 1
+
+    if correctIndex >= 0 and correctIndex < len(tasks):
+
+        tasks[correctIndex]["Done"] = True
+        print(f"Task {index} completed")
+    
+    else:
+
+        print("invalid index")
+
+
+    return
+
 tasks = []
 
 while True:
@@ -56,6 +72,11 @@ while True:
         index = int(input("Enter the task index: "))
         newName = input("Enter the new task name: ")
         UpdateName(tasks, index, newName)
+
+    elif choice == "4":
+        ViewTasks(tasks)
+        index = int(input("Enter the task index: "))
+        FinishTasks(tasks, index)
 
     elif choice == "6":
         break
