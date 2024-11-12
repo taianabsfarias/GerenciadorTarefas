@@ -36,15 +36,15 @@ def FinishTasks(tasks, index):
     correctIndex = index - 1
 
     if correctIndex >= 0 and correctIndex < len(tasks):
-
+        
         tasks[correctIndex]["Done"] = True
         print(f"Task {index} completed")
     
     else:
-
+       
         print("invalid index")
-
-
+    
+    
     return
 
 tasks = []
